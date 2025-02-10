@@ -6,7 +6,7 @@ import Nav from "../components/Nav"
 const Header = () => {
   return (
     <header className="py-8 xl:py-12 text-white bg-red-50/20">
-      <div className='container mx-auto'>
+      <div className='container mx-auto flex justify-between items-center'>
       {/* logo */}
      <Link href={"/"}>
      <h1 className='text-4xl'>
@@ -14,7 +14,7 @@ const Header = () => {
      </h1>
      </Link>
      {/* desktop nav & hire me button*/}
-     <div className="hidden xl:flex">
+     <div className="hidden xl:flex gap-8">
      <Nav />
      <Link href="/contact">
      <Button>Hire me</Button>
