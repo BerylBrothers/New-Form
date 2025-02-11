@@ -15,7 +15,7 @@ const stairAnimation = {
 }
 
 //calculate the reverse index for starggered delay
-const reverseIndex = (index) =>{
+const reverseIndex = (index) => {
   const totalSteps = 6;
   return totalSteps - index - 1;
 }
@@ -28,6 +28,7 @@ const Stairs = () => {
   the delay is calculated dynamically based on it's reversed index
   creating a starggered effect with decreasing delay for each subsequent step
  */}
+ 
 {[...Array(6)].map((_,index)=>{
   return(
   <motion.div 
