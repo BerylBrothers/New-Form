@@ -22,10 +22,10 @@ export default {
 	
   	extend: {
   		colors: {
-  			primary:'#1c1c22',
+  			primary:'#012A4A',
 			accent:{
-				DEFAULT: '#00ff99',
-				hover: '#00e187',
+				DEFAULT: '#48CAE4',
+				hover: '#90E0EF',
 			}
   		},
   		borderRadius: {

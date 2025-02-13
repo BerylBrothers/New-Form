@@ -15,7 +15,7 @@ export default function Home() {
           <div className="text-center xl:text-left order-2 xl:order-none">
             <span>Software Developer</span>
             <h1 className="h1 mb-6">Hello I'm <br /><span className="text-accent">Daniel Collins</span></h1>
-            <p className="max-w-[500px] mb-9 text-white/80">I am a web designer/web developer. 
+            <p className="max-w-[500px] mb-9 text-white">I am a web designer/web developer. 
               I know many different programming 
               languages and libriaries.</p>
               {/* button and socials */}
