@@ -20,14 +20,14 @@ export default function Home() {
               languages and libriaries.</p>
               {/* button and socials */}
               <div className="flex flex-col xl:flex-row items-center gap-8">
-                <Button variant="outline" size="lg" className="uppercase flex items-center gap-2">
+                <Button variant="outline" size="lg" className="uppercase flex items-center gap-2 border-white text-white">
                   <span>Download CV</span>
                   <FiDownload />
                 </Button>
                 <div className="mb-8 xl:mb-0">
-                  <Socials containerStyles="flex gap-6" IconStyles="w-9 h-9 border border-accent rounded-full 
-                  flex justify-center items-center 
-                  text-accent text-base hover:bg-accent 
+                  <Socials containerStyles="flex gap-6" IconStyles="w-9 h-9 border border-white rounded-full 
+                  flex justify-center items-center  
+                  text-white text-base hover:bg-accent 
                   hover:text-primary transition-all"/>
                   </div>
               </div>
