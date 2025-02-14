@@ -21,12 +21,12 @@ const Photo = () => {
            transition: {delay:2.4, duration: 0.4, ease:"easeInOut"},}}
         
         className="w-[298px] h-[298px] xl:w-[498px] xl:h-[498px] mix-blend-lighten absolute">
-            <Image 
+            {/* <Image 
             src="/assets/photo.png"
             priority quality={100}
             fill 
             alt="" 
-            className="object-contain"/>
+            className="object-contain"/> */}
         </motion.div>
         {/* circle */}
         <motion.svg className="w-[300px] xl:w-[506px] h-[300px] xl:h-[506px]" 
