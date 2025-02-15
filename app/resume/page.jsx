@@ -11,7 +11,7 @@ SiTailwindcss, SiNextdotjs
 
 //about data
 const about = {
-  title:"About me",
+  title:"About Me",
   description:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim alias, eius ea earum autem quaerat ipsum magnam!",
   info:[
     {
@@ -46,9 +46,14 @@ const about = {
     //experience data
     const experience = {
       icon:'/assets/resume/cap.svg',
-      title:'My experience',
+      title:'My Experience',
       description:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim alias, eius ea earum autem quaerat ipsum magnam!",
       items: [
+        {
+          company:"Beryl Brothers Inc.",
+          position:"Fullstack Developer",
+          duration:"2021-present"
+        },
         {
           company:"Beryl Brothers Inc.",
           position:"Fullstack Developer",
@@ -75,30 +80,30 @@ const about = {
      //education data
      const education = {
       icon:'/assets/resume/badge.svg',
-      title:'My experience',
+      title:'My Education',
       description:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim alias, eius ea earum autem quaerat ipsum magnam!",
       items: [
         {
           institution:"University of North Florida.",
-          degree:"Fullstack Developer",
-          duration:"2021-present"
+          degree:"Computer Science",
+          duration:"2022-present"
         },
         {
           institution:"University of North Florida.",
-          degree:"Fullstack Developer",
-          duration:"2021-present"
+          degree:"A+ Certificate",
+          duration:"2019-present"
         },
         {
           institution:"University of North Florida.",
-          degree:"Fullstack Developer",
-          duration:"2021-present"
+          degree:"Associates degree",
+          duration:"2018-present"
         },
       ]
     }
 
     //skills data
     const skills = {
-      title: "My skills",
+      title: "My Skills",
       description:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim alias, eius ea earum autem quaerat ipsum magnam!",
       SkillList:[
         {
@@ -127,11 +132,11 @@ const about = {
         },
         {
           icon: < SiNextdotjs />,
-          name: "node js"
+          name: "next js"
         },
         {
           icon: < SiTailwindcss />,
-          name: "node js"
+          name: "tailwind"
         },
       ]
     }
@@ -153,7 +158,7 @@ const resume = () => {
     <motion.div initial={{opacity: 0}} animate={{opacity: 1, transition:{delay: 2.4, duration:0.4, ease:"easeIn"},}}
     className="min-h-[80vh] flex flex-col justify-center py-6 xl:py-0"
     >
-      <div className="container mx-auto">
+      <div className="container mx-auto xl:py-6">
         <Tabs defaultValue="experience" className="flex flex-col xl:flex-row gap-[60px]">
           <TabsList className="flex flex-col w-full max-w-[380px] mx-auto xl:mx-0 gap-6">
             <TabsTrigger value="experience">Experience</TabsTrigger>
@@ -166,16 +171,84 @@ const resume = () => {
           <div className="min-h-[70vh] w-full">
             {/* experience */}
             <TabsContent value="experience" className="w-full">
-              experience
+              <div className="flex flex-col gap-[30px] text-center xl:text-left">
+                <h3>{experience.title}</h3>
+                <p className="max-w-[600px] mx-auto xl:mx-0">{experience.description}</p>
+                <ScrollArea className="h-[400px] ">
+                  <ul className="grid grid-cols-1 lg:grid-cols-2 gap-[30px]">
+                    {experience.items.map((item, index) => {
+                      return <li key={index} className=" bg-blue-600 h-[184px] py-6 px-10 rounded-xl flex flex-col justify-center items-center lg:items-start gap-1]">
+                        <span className="text-white">{item.duration}</span>
+                        <h3 className="text-xl max-w-[260px] min-h-[60px] text-center lg:text-left">{item.position}</h3>
+                        <div className="flex items-center gap-3">
+                          {/* dot */}
+                          <span className="w-[6px] h-[6px] rounded-full bg-white"></span>
+                          <p>{item.company}</p>
+                        </div>
+                      </li>
+                    })}
+                  </ul>
+                </ScrollArea>
+              </div>
             </TabsContent>
             <TabsContent value="education" className="w-full">
-              education
+            <div className="flex flex-col gap-[30px] text-center xl:text-left">
+                <h3>{education.title}</h3>
+                <p className="max-w-[600px] mx-auto xl:mx-0">{education.description}</p>
+                <ScrollArea className="h-[400px]">
+                  <ul className="grid grid-cols-1 lg:grid-cols-2 gap-[30px]">
+                    {education.items.map((item, index) => {
+                      return <li key={index} className=" bg-blue-600 h-[184px] py-6 px-10 rounded-xl flex flex-col justify-center items-center lg:items-start gap-1]">
+                        <span className="text-white">{item.duration}</span>
+                        <h3 className="text-xl max-w-[260px] min-h-[60px] text-center lg:text-left">{item.degree}</h3>
+                        <div className="flex items-center gap-3">
+                          {/* dot */}
+                          <span className="w-[6px] h-[6px] rounded-full bg-white"></span>
+                          <p>{item.institution}</p>
+                        </div>
+                      </li>
+                    })}
+                  </ul>
+                </ScrollArea>
+              </div>
             </TabsContent>
             <TabsContent value="skills" className="w-full">
-              skills
+            <div className="flex flex-col gap-[30px]">
+              <div className="flex flex-col gap-[30px] text-center xl:text-left">
+                <h3>{skills.title}</h3>
+                <p className="max-w-[600px] mx-auto xl:mx-0">{skills.description}</p>
+              </div>
+              <ul className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
+                {skills.SkillList.map((item, index) => {
+                  return <li key={index}>
+                    <TooltipProvider delayDuration={100}>
+                    <Tooltip>
+                      <TooltipTrigger className="w-full h-[150px] bg-blue-600 rounded-xl flex justify-center items-center group">
+                        <div className="text-6xl group-hover:text-accent transition-all duration-300">
+                          {item.icon}
+                          </div>
+                      </TooltipTrigger>
+                      <TooltipContent>
+                        <p className="capitalize">{item.name}</p>
+                      </TooltipContent>
+                    </Tooltip>
+                    </TooltipProvider>
+                    </li>
+                })}
+              </ul>
+            </div>
             </TabsContent>
-            <TabsContent value="about" className="w-full">
-              about
+            <TabsContent value="about" className="w-full text-center xl:text-left">
+            <div className="flex flex-col gap-[30px]">
+              <h3>{about.title}</h3>
+              <p className="max-w-[600px] mx-auto xl:mx-0" >{about.description}</p>
+              <ul className="grid grid-cols-1 xl:grid-cols-2 gap-y-6 max-w-[620px] mx-auto xl:mx-0">{about.info.map((item, index) => {
+                return <li key={index} className="flex items-center justify-center xl:justify-start gap-4">
+                  <span className="font-bold">{item.fieldName}</span>
+                  <span className="font-semibold">{item.fieldValue}</span>
+                </li>
+              })}</ul>
+            </div>
             </TabsContent>
           </div>
         </Tabs>
