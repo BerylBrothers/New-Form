@@ -38,7 +38,7 @@ export default function Home() {
           </div>
           </div>
           </div>
-          <Stats />
+          <Stats className="flex pb-8"/>
       </section>
   );
 }

@@ -5,6 +5,7 @@ import {Sheet, SheetContent, SheetTrigger, SheetTitle} from "../components/ui/sh
 import {usePathname} from "next/navigation";
 import Link from "next/link";
 import {CiMenuFries} from "react-icons/ci";
+import Image from "next/image"
 import React from 'react'
 
 const links = [
@@ -47,12 +48,19 @@ const MobileNav = () => {
     </SheetTrigger>
     <SheetContent className="flex flex-col">
         {/* logo */}
-        <SheetTitle className="mt-24 mb-40 text-center text-2xl">
-            <Link href="/">
-            <h1 className="text-4xl text-white font-semibold">
-                Daniel<span className="text-accent">.</span>
-            </h1>
-            </Link>
+        <SheetTitle className="mt-24 mb-40 text-center text-2xl justify-center">
+        <Link href={"/"} className=' flex justify-center'>
+     {/* {<h1 className='text-4xl'>
+      Daniel <span className='text-accent'>.</span>
+     </h1> */}
+       <Image 
+       src={'/assets/logo-transparent.png'}
+       height={100}
+       width={100}
+       alt=""
+       className='flex bg-white object-contain rounded-xl justify-center'
+       />
+     </Link>
         </SheetTitle>
         {/* navigation */}
         

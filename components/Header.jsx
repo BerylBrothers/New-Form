@@ -19,6 +19,7 @@ const Header = () => {
        height={100}
        width={100}
        alt=""
+       className='bg-white object-contain rounded-xl'
        />
      </Link>
 
