@@ -32,7 +32,7 @@ const links = [
 const info = [
     {icon: <FaPhoneAlt />,
       title:"Phone",
-      description:"904-477-8782"
+      description:"555-555-5555"
     },
     {icon: <FaEnvelope />,
       title:"Envelope",
