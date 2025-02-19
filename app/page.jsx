@@ -10,7 +10,7 @@ export default function Home() {
     <section className="h-full">
       <div className="container mx-auto h-full">
         <div className="flex flex-col xl:flex-row 
-        items-center justify-between xl:pt-8 xl:pb-24">
+        items-center justify-between pt-6 xl:pt-8 xl:pb-24">
           {/* text */}
           <div className="text-center xl:text-left order-2 xl:order-none">
             <span>Software Developer</span>

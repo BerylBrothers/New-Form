@@ -12,7 +12,7 @@ SiTailwindcss, SiNextdotjs
 //about data
 const about = {
   title:"About Me",
-  description:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim alias, eius ea earum autem quaerat ipsum magnam!",
+  description:"I'm Daniel Collins",
   info:[
     {
       fieldName: "Name",
@@ -47,7 +47,7 @@ const about = {
     const experience = {
       icon:'/assets/resume/cap.svg',
       title:'My Experience',
-      description:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim alias, eius ea earum autem quaerat ipsum magnam!",
+      description:"As a web developer, I specialize in building dynamic, responsive websites using modern technologies like React, Figma, and Next.js for front-end development. I also work with server-side tools such as Node.js and Express, and database systems like MongoDB and PostgreSQL, to create full-stack applications.",
       items: [
         {
           company:"Beryl Brothers Inc.",
@@ -81,7 +81,7 @@ const about = {
      const education = {
       icon:'/assets/resume/badge.svg',
       title:'My Education',
-      description:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim alias, eius ea earum autem quaerat ipsum magnam!",
+      description:"I completed my Bachelor's degree in Information Science at the University of North Florida (UNF), where I studied for four years. During my time there, I gained a strong foundation in technology, data management, and problem-solving, equipping me with the skills needed for a successful career in web development and IT.",
       items: [
         {
           institution:"University of North Florida.",
@@ -104,7 +104,7 @@ const about = {
     //skills data
     const skills = {
       title: "My Skills",
-      description:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim alias, eius ea earum autem quaerat ipsum magnam!",
+      description:"I have hands-on experience with a variety of modern web development technologies, including Next.js, React, and Node.js for building dynamic applications. I’m skilled in front-end design using HTML5, CSS3, and Tailwind, as well as back-end development with .NET Core and C#. I’m also proficient in using Figma for UI/UX design, allowing me to create seamless and visually appealing user interfaces.",
       SkillList:[
         {
           icon: < FaHtml5 />,

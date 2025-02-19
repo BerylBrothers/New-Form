@@ -107,9 +107,9 @@ const work = () => {
                 {project.description}
                 </p>
                 {/* stack */}
-                <ul className='flex gap-4'>
+                <ul className='flex gap-4 '>
                   {project.stack.map((item, index) =>{
-                    return <li key={index} className='text-xl text-accent'>
+                    return <li  key={index} className='bg-blue-600 text-xl text-white p-2 rounded-xl'>
                       {item.name}
                       {index !== project.stack.length - 1 && ","}
                       </li>
