@@ -5,9 +5,11 @@ import Nav from "../components/Nav"
 import MobileNav from './MobileNav'
 import Image from 'next/image'
 
+// bg-[#42a5f5]
+
 const Header = () => {
   return (
-    <header className="py-8 xl:py-6 text-white bg-[#42a5f5]">
+    <header className="py-8 xl:py-6 text-white bg-primary">
       <div className='container mx-auto flex justify-between items-center'>
       {/* logo */}
      <Link href={"/"}>
