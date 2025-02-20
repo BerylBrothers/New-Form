@@ -23,6 +23,7 @@ export default {
   	extend: {
   		colors: {
   			primary:'#012A4A',
+			primarybg: "linear-gradient(to bottom, #a1c4fd, #c2e9fb, #4facfe);",
 			accent:{
 				DEFAULT: '#1e88e5',
 				hover: '#1e88e5',

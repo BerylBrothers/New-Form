@@ -49,7 +49,7 @@ const Footer = () => {
     const pathname = usePathname();
   
     return (
-      <footer className='py-8 xl:py-8 text-white bg-blue-800'>
+      <footer className='py-8 xl:py-8 text-white bg-primary'>
         <div className="container mx-auto grid grid-cols-1 xl:grid-cols-3 gap-6">
           
           {/* Image Column */}
@@ -69,7 +69,7 @@ const Footer = () => {
           <div className="flex justify-center items-center xl:items-start xl:justify-start flex-col space-y-4 mb-8 xl:mb-0">
             <h3 className="text-xl font-bold">Quick Links</h3>
             {links.map((item, index) => (
-              <Link key={index} href={item.path} className="text-lg hover:text-accent">
+              <Link key={index} href={item.path} className="capitalize text-lg hover:text-accent transition-all duration-300">
                 {item.name}
               </Link>
             ))}

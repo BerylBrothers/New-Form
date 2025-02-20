@@ -4,7 +4,7 @@
 
 @layer base {
 body{
-  @apply font-primary bg-primary text-white leading-loose;
+  @apply font-primary bg-gradient-to-b from-[#33b8bd] via-[#0e53d3] to-[#1e3c72] text-white leading-loose;
   }
 
 h1{
