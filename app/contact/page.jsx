@@ -181,7 +181,7 @@ const Contact = () => {
             >
               <h3 className="text-white">Let's Work Together!</h3>
               <p className="text-white">
-                I’m passionate about creating user-friendly, high-quality websites and web applications.
+                I am passionate about creating user-friendly, high-quality websites and web applications.
                 With expertise in modern technologies and design, I’m committed to delivering solutions that
                 match your vision and goals. Let’s work together to bring your ideas to life with clean, efficient code.
               </p>
@@ -272,7 +272,7 @@ const Contact = () => {
           <div className="flex-1 flex items-center justify-center xl:justify-end order-1 xl:order-none mb-8 xl:mb-0">
             <ul className="flex flex-col gap-10">
               {info.map((item, index) => (
-                <li key={index} className="flex items-center gap-6 bg-white/10 rounded-xl p-3 pr-7">
+                <li key={index} className="flex items-center gap-6 bg-white/10 rounded-xl p-3 pr-7 ">
                   <div className="w-[52px] h-[52px] xl:w-[72px] xl:h-[72px] text-blue-600 rounded-xl flex items-center justify-center">
                     <div className="text-[28px]">{item.icon}</div>
                   </div>
