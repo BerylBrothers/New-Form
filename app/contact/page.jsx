@@ -27,7 +27,7 @@ const info = [
   },
   { icon: <FaMapMarkerAlt />,
     title: "Address",
-    description: "1547 database dr, Boston, MA"
+    description: "154e7 database dr, Boston, MA"
   },
 ]
 
@@ -109,7 +109,7 @@ const Contact = () => {
   //                   <SelectItem value="Web-Dev">Web Development</SelectItem>
   //                   <SelectItem value="Ui/UX">UI/UX</SelectItem>
   //                   <SelectItem value="Logo-Design">Logo Design</SelectItem>
-  //                 </SelectGroup>
+  //                 </SelectGroup> new comment
   //               </SelectContent>
   //             </Select>
 
