@@ -5,7 +5,8 @@ import React, { useState } from 'react'
 import { Button } from "../../components/ui/button";
 import { Input } from "../../components/ui/input";
 import { Textarea } from "../../components/ui/textarea";
-// import { useForm, ValidationError } from '@formspree/react';
+// import emailjs from 'emailjs-com'; // Import EmailJS
+
 
 import { Select, SelectItem, SelectContent,
    SelectGroup, SelectLabel, SelectTrigger, 
@@ -32,7 +33,7 @@ const info = [
 
 const Contact = () => {
   
-  // Create state for the form data
+  //Create state for the form data
   const [formData, setFormData] = useState({
     firstname: '',
     lastname: '',
@@ -141,20 +142,15 @@ const Contact = () => {
     </motion.section>
   );
 
-  // const [state, handleSubmit] = useForm("xjkglwqr");
-
-
-  // // Manage form data with React state
   // const [formData, setFormData] = useState({
-  //   firstname: "",
-  //   lastname: "",
-  //   email: "",
-  //   phone: "",
-  //   service: "",
-  //   message: ""
+  //   firstname: '',
+  //   lastname: '',
+  //   email: '',
+  //   phone: '',
+  //   service: '',
+  //   message: '',
   // });
 
-  // // Handle form field changes
   // const handleInputChange = (e) => {
   //   const { name, value } = e.target;
   //   setFormData((prevData) => ({
@@ -163,134 +159,90 @@ const Contact = () => {
   //   }));
   // };
 
+  // const handleServiceChange = (value) => {
+  //   setFormData((prevData) => ({
+  //     ...prevData,
+  //     service: value,
+  //   }));
+  // };
+
+  // const sendEmail = (e) => {
+  //   e.preventDefault();
+
+  //   emailjs
+  //     .send(
+  //       'service_igipb6r', // Replace with your Service ID
+  //       'template_3tcgcum', // Replace with your Template ID
+  //       {
+  //         firstname: formData.firstname,
+  //         lastname: formData.lastname,
+  //         email: formData.email,
+  //         phone: formData.phone,
+  //         service: formData.service,
+  //         message: formData.message,
+  //       },
+  //       '2kPXi079dRuwidjTh' // Replace with your User ID
+  //     )
+  //     .then((response) => {
+  //       console.log('Email sent successfully:', response);
+  //       alert('Email sent successfully!');
+  //     })
+  //     .catch((error) => {
+  //       console.error('Error sending email:', error);
+  //       alert('Error sending email.');
+  //     });
+  // };
+
   // return (
-  //   <motion.section
-  //     initial={{ opacity: 0 }}
-  //     animate={{
-  //       opacity: 1,
-  //       transition: { delay: 2.4, duration: 0.4, ease: "easeIn" },
-  //     }}
-  //     className="py-6"
-  //   >
-  //     <div className="container mx-auto">
-  //       <div className="flex flex-col xl:flex-row gap-[30px]">
-  //         {/* Form Section */}
-  //         <div className="xl:-[54%] order-2 xl:order-none">
-  //           <form
-  //             className="flex flex-col gap-6 p-10 bg-blue-600 rounded-xl"
-  //             onSubmit={handleSubmit}
-  //           >
-  //             <h3 className="text-white">Let's Work Together!</h3>
-  //             <p className="text-white">
-  //               I am passionate about creating user-friendly, high-quality websites and web applications.
-  //               With expertise in modern technologies and design, I’m committed to delivering solutions that
-  //               match your vision and goals. Let’s work together to bring your ideas to life with clean, efficient code.
-  //             </p>
-
-  //             {/* Input Fields */}
-  //             <div className="text-white grid grid-cols-1 md:grid-cols-2 gap-6">
-  //               <input
-  //                 className="text-black p-3 rounded-xl"
-  //                 type="text"
-  //                 name="firstname"
-  //                 placeholder="First Name"
-  //                 value={formData.firstname}
-  //                 onChange={handleInputChange}
-  //               />
-  //               <input
-  //                 className="text-black p-3 rounded-xl"
-  //                 type="text"
-  //                 name="lastname"
-  //                 placeholder="Last Name"
-  //                 value={formData.lastname}
-  //                 onChange={handleInputChange}
-  //               />
-  //               <input
-  //                 className="text-black p-3 rounded-xl"
-  //                 type="email"
-  //                 name="email"
-  //                 placeholder="Email Address"
-  //                 value={formData.email}
-  //                 onChange={handleInputChange}
-  //               />
-  //               <input
-  //                 className="text-black p-3 rounded-xl"
-  //                 type="phone"
-  //                 name="phone"
-  //                 placeholder="Phone Number"
-  //                 value={formData.phone}
-  //                 onChange={handleInputChange}
-  //               />
-  //             </div>
-
-  //             {/* Service Dropdown */}
-  //             <select
-  //               name="service"
-  //               className="text-black p-3 rounded-xl"
-  //               value={formData.service}
-  //               onChange={handleInputChange}
-  //             >
-  //               <option value="" disabled>Select a service</option>
-  //               <option value="Web-Dev">Web Development</option>
-  //               <option value="UI/UX">UI/UX</option>
-  //               <option value="Logo-Design">Logo Design</option>
-  //             </select>
-
-  //             {/* Message Textarea */}
-  //             <textarea
-  //               className="text-black p-3 rounded-xl"
-  //               name="message"
-  //               placeholder="Type your message here."
-  //               rows="6"
-  //               value={formData.message}
-  //               onChange={handleInputChange}
-  //             />
-
-  //             {/* Validation Errors */}
-  //             <ValidationError
-  //               prefix="Email"
-  //               field="email"
-  //               errors={state.errors}
-  //             />
-  //             <ValidationError
-  //               prefix="Message"
-  //               field="message"
-  //               errors={state.errors}
-  //             />
-
-  //             {/* Submit Button */}
-  //             <button
-  //               type="submit"
-  //               className="max-w-40 bg-primary hover:bg-primary hover:text-white p-3 rounded-xl"
-  //               disabled={state.submitting}
-  //             >
-  //               {state.submitting ? "Submitting..." : "Send Message"}
-  //             </button>
-  //           </form>
-  //         </div>
-
-  //         {/* Info Section */}
-  //         <div className="flex-1 flex items-center justify-center xl:justify-end order-1 xl:order-none mb-8 xl:mb-0">
-  //           <ul className="flex flex-col gap-10">
-  //             {info.map((item, index) => (
-  //               <li key={index} className="flex items-center gap-6 bg-white/10 rounded-xl p-3 pr-7 ">
-  //                 <div className="w-[52px] h-[52px] xl:w-[72px] xl:h-[72px] text-blue-600 rounded-xl flex items-center justify-center">
-  //                   <div className="text-[28px]">{item.icon}</div>
-  //                 </div>
-  //                 <div className="flex-1 justify-center items-center">
-  //                   <p className="text-white">{item.title}</p>
-  //                   <h3 className="text-xl text-white">{item.description}</h3>
-  //                 </div>
-  //               </li>
-  //             ))}
-  //           </ul>
-  //         </div>
-  //       </div>
-  //     </div>
-  //   </motion.section>
+  //   <form onSubmit={sendEmail}>
+  //     {/* Form Fields */}
+  //     <input
+  //       type="text"
+  //       name="firstname"
+  //       value={formData.firstname}
+  //       onChange={handleInputChange}
+  //       placeholder="First Name"
+  //     />
+  //     <input
+  //       type="text"
+  //       name="lastname"
+  //       value={formData.lastname}
+  //       onChange={handleInputChange}
+  //       placeholder="Last Name"
+  //     />
+  //     <input
+  //       type="email"
+  //       name="email"
+  //       value={formData.email}
+  //       onChange={handleInputChange}
+  //       placeholder="Email Address"
+  //     />
+  //     <input
+  //       type="tel"
+  //       name="phone"
+  //       value={formData.phone}
+  //       onChange={handleInputChange}
+  //       placeholder="Phone Number"
+  //     />
+  //     <textarea
+  //       name="message"
+  //       value={formData.message}
+  //       onChange={handleInputChange}
+  //       placeholder="Type your message here."
+  //     />
+  //     <select
+  //       name="service"
+  //       value={formData.service}
+  //       onChange={(e) => handleServiceChange(e.target.value)}
+  //     >
+  //       <option value="Web-Dev">Web Development</option>
+  //       <option value="Ui/UX">UI/UX</option>
+  //       <option value="Logo-Design">Logo Design</option>
+  //     </select>
+  //     <button type="submit">Send Message</button>
+  //   </form>
   // );
-
-};
+  }
 
 export default Contact;
 

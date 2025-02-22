@@ -1,46 +1,39 @@
-import nodemailer from 'nodemailer';
 
-export async function POST(req) {
+export async function POST(request) {
   try {
-    // Parse the incoming JSON payload
-    const { firstname, lastname, email, phone, service, message } = await req.json();
+    const formData = await request.json(); // Parse the incoming JSON data
 
-    // Setup Maildev transporter
-    const transporter = nodemailer.createTransport({
-      host: 'localhost', // Maildev runs on localhost
-      port: 1025, // Maildev SMTP port
-      secure: false, // Maildev does not use SSL
+    const response = await fetch('https://api.emailjs.com/api/v1.0/email/send', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        service_id: 'service_igipb6r',    // Replace with your Service ID
+        template_id: 'template_3tcgcum',  // Replace with your Template ID
+        user_id: '2kPXi079dRuwidjTh',     // Replace with your User ID
+        template_params: formData,         // Pass the form data here
+      }),
     });
 
-    const mailOptions = {
-      from: email, // Sender's email (the email entered in the form)
-      to: 'recipient@example.com', // Replace with your email or the one to receive the form data
-      subject: `New Contact Message from ${firstname} ${lastname}`,
-      text: `
-        First Name: ${firstname}
-        Last Name: ${lastname}
-        Email: ${email}
-        Phone: ${phone}
-        Service: ${service}
-        Message: ${message}
-      `,
-    };
+    const text = await response.text(); // Get raw response as text
+    console.log('Raw response:', text);  // Log the raw response
 
-    // Send the email
-    await transporter.sendMail(mailOptions);
-
-    // Respond with success
-    return new Response(
-      JSON.stringify({ message: 'Email sent successfully' }),
-      { status: 200 }
-    );
+    if (response.ok) {
+      return new Response(JSON.stringify({ message: 'Email sent successfully' }), {
+        status: 200,
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      });
+    } else {
+      throw new Error('Failed to send email: ' + text);
+    }
   } catch (error) {
-    console.error('Error sending email:', error);
-
-    // Respond with an error
+    console.error('Error:', error);
     return new Response(
-      JSON.stringify({ message: 'Error sending email', error: error.message }),
-      { status: 500 }
+      JSON.stringify({ message: 'Error sending email' }),
+      { status: 500, headers: { 'Content-Type': 'application/json' } }
     );
   }
 }
